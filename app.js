@@ -23,7 +23,8 @@ const allowedCors = [
   //   'https://praktikum.tk',
   //   'http://praktikum.tk',
   'https://localhost:3001',
-  // 'https://i-t.nomoredomains.work',
+  'https://mvs.nomoreparties.sbs',
+  'http://mvs.nomoreparties.sbs',
 ];
 
 app.use(cors(allowedCors));
