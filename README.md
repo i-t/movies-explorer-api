@@ -1,12 +1,11 @@
 # movies-explorer-api API дипломного проекта
 ## Этап 2: бэкенд
-___
 
-*Схемы:*
+### Схемы:
 * user
 * movie
 
-*Роуты:*
+### Роуты:
 * GET /users/me
 * PATCH /users/me
 
@@ -14,12 +13,12 @@ ___
 * POST /movies
 * DELETE /movies/_id 
 
-*аутентификация и авторизация:*
-* POST /signup
-* POST /signin 
+### аутентификация и авторизация:
+- POST /signup
+- POST /signin 
 
-*Логирование:*
-* request.log
+### Логирование:
+- request.log
 * error.log
 
-*[API](http://api.mvs.nomoreparties.sbs)*
+### [Деплой](http://api.mvs.nomoreparties.sbs)
