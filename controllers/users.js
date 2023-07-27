@@ -56,6 +56,9 @@ module.exports.updateInfo = (req, res, next) => {
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         return next(new BadRequestError(`Некорректные данные. ${err.message}`));
+      }
+      if (err.code === 11000) {
+        return next(new ConflictError('Пользователь с таким email уже зарегистрирован'));
       } return next(err);
     });
 };

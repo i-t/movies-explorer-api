@@ -20,8 +20,6 @@ mongoose.connect(NODE_ENV === 'production' ? DATA_BASE : LOCAL_DB, {});
 const app = express();
 
 const allowedCors = [
-  //   'https://praktikum.tk',
-  //   'http://praktikum.tk',
   'https://localhost:3001',
   'https://mvs.nomoreparties.sbs',
   'http://mvs.nomoreparties.sbs',
@@ -49,11 +47,11 @@ app.use(helmet());
 
 app.use(requestLogger);
 
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
+// app.get('/crash-test', () => {
+//   setTimeout(() => {
+//     throw new Error('Сервер сейчас упадёт');
+//   }, 0);
+// });
 
 app.use(router);
 

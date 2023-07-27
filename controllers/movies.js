@@ -7,7 +7,7 @@ const ForbiddenError = require('../utils/errors/ForbiddenError');
 
 const getMovies = (req, res, next) => {
   Movie
-    .find({})
+    .find({ owner: req.user._id }) // нужен тест
     .then((movies) => res.send(movies))
     .catch((err) => next(err));
 };

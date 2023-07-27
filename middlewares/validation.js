@@ -19,7 +19,7 @@ module.exports.validateLogin = celebrate({
 module.exports.validateEditUser = celebrate({
   body: Joi.object().keys({
     name: Joi.string().required(),
-    email: Joi.string().required(),
+    email: Joi.string().required().email(),
   }),
 });
 
