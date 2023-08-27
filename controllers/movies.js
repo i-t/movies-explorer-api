@@ -5,11 +5,13 @@ const BadRequestError = require('../utils/errors/BadRequestError');
 const NotFoundError = require('../utils/errors/NotFoundError');
 const ForbiddenError = require('../utils/errors/ForbiddenError');
 
-const getMovies = (req, res, next) => {
-  Movie
-    .find({ owner: req.user._id }) // нужен тест
-    .then((movies) => res.send(movies))
-    .catch((err) => next(err));
+const getMovies = async (req, res, next) => {
+  try {
+    const movies = await Movie.find({ owner: req.user._id });
+    res.send(movies);
+  } catch (err) {
+    next(err);
+  }
 };
 
 const createMovie = (req, res, next) => {
